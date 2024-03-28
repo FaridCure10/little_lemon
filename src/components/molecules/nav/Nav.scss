@@ -1,0 +1,127 @@
+@import '../../../assets/style/variables.scss';
+
+.nav-active{
+    width: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background-color: rgba(26, 24, 20, 45%);;
+        backdrop-filter: blur(3px);
+        height: 100vh;
+        width: 100vw;
+        transition: 0.4s;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+nav {
+    ul {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        list-style-type: none;
+
+        a {
+            text-decoration: none;
+
+            &:-webkit-any-link{
+                color: inherit;
+            }
+
+            &.active{
+                color: $primary-color;
+            }
+        }
+    }
+
+    .menu-xl{
+        display: none;
+    }
+
+    .menu-xs{
+        position: relative;
+        padding-right: 10px;
+
+        .btn-menu {
+            display: inline-block;
+            cursor: pointer;
+            background: transparent;
+
+            div {
+                width: 35px;
+                height: 5px;
+                background-color: $secundary-color;
+                margin: 6px 0;
+                transition: all .5s;
+            }
+        }
+
+        &.active{
+            width: 100%;
+            z-index: 5;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: $secundary-color;
+
+            .btn-menu{
+                div{
+                    background-color: $primary-color
+                }
+                div:first-child {
+                    transform: translate(0, 11px) rotate(-45deg);
+                }
+                div:nth-child(2) {
+                    opacity: 0;
+                }
+                div:last-child {
+                    transform: translate(0, -11px) rotate(45deg);
+                }
+            }
+
+            ul{
+                position: absolute;
+                display: flex;
+                bottom: -235px;
+                left: 0;
+                width: 100%;
+                padding-left: 10px;
+                background: $secundary-color;
+
+                li{
+                    padding: 0.5rem 0 0.5rem;
+
+                    a{
+                        font-size: 16px;
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        padding-top: 10px;
+
+        &::before{
+            display: none;
+        }
+
+        .menu-xs{
+            display: none;
+        }
+
+        .menu-xl{
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .container-logo {
+        width: 100px;
+        height: auto;
+        cursor: pointer;
+
+        &.fixed-top{
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+            background: rgba(0, 0, 0, 0.85);
+            border-bottom: 1px solid #37332a;
+        }
+
+        .mob-logo {
+            width: 20px;
+            margin-left: 10px;
+        }
+
+        .desk-logo{
+            display: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            width: 200px;
+
+            .mob-logo {
+                display: none;
+            }
+
+            .desk-logo{
+                width: 150px;
+                display: block;
+                margin-left: 10px;
+                padding-top: 10px;
+            }
+        }
+
+    }
+}
