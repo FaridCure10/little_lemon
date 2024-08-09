@@ -5,5 +5,6 @@
         "javascript": "javascriptreact"
     },
     "typescript.suggest.autoImports": true,
-    "javascript.suggest.autoImports": true
+    "javascript.suggest.autoImports": true,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta"
 }

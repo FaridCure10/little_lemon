@@ -4,7 +4,7 @@ import Nav from '../../molecules/nav/Nav';
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default ({showMenu}) => {
 
     return (
         <header>
@@ -12,7 +12,9 @@ export default () => {
                 <img className='mob-logo' src={LogoF.mobile} alt="logo" />
                 <img className='desk-logo' src={LogoF.desk} alt="logo" />
             </Link>
-            <Nav />
+            {
+                showMenu ? <Nav /> : <Link to={'/'} className='btnHome'>Home</Link>
+            }
         </header>
     )
 }

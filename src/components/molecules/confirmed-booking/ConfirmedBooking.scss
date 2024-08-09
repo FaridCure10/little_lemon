@@ -1,0 +1,40 @@
+@import '../../../assets/style/variables.scss';
+
+.sectionConfirmed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 15px;
+    gap: 15px;
+
+    .form_section-title{
+        margin: 30px 0px;
+
+        h2{
+            font-size: 14px;
+            font-weight: 500;
+            padding: 0;
+            line-height: 1px;
+            margin: 0 0 5px 0;
+            letter-spacing: 2px;
+            color: $hr-color;
+            font-family: "Poppins", sans-serif;
+
+            &::after{
+                content: "";
+                width: 120px;
+                height: 1px;
+                display: inline-block;
+                background: $hr-color;
+                margin: 4px 10px;
+            }
+        }
+
+        p{
+            font-size: 36px;
+            font-weight: 700;
+            color: $primary-color;
+        }
+    }
+}
