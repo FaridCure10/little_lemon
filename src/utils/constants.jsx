@@ -48,3 +48,53 @@ export const listTestimonials = [
         profession:'Freelancer'
     }
 ]
+
+export const seededRandom = function (seed) {
+    var m = 2**35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+        return (s = s * a % m) / m;
+    };
+}
+
+export const fetchAPI = function(date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for(let i = 17; i <= 23; i++) {
+        if(random() < 0.5) {
+            result.push(i + ':00');
+        }
+        if(random() < 0.5) {
+            result.push(i + ':30');
+        }
+    }
+    return result;
+};
+
+export const submitAPI = function(formData) {
+    return true;
+};
+
+export const validate = (form) =>{
+    return !(form.firstName !== '' &&
+            form.firstName !== null &&
+            form.firstName.length > 0 &&
+            form.lastName !== '' &&
+            form.lastName !== null &&
+            form.lastName.length > 0 &&
+            form.phone !== '' &&
+            form.phone !== null &&
+            form.phone.length >= 7 &&
+            form['res-date'] !== '' &&
+            form['res-date'] !== null &&
+            form['res-time'] !== '' &&
+            form['res-time'] !== null &&
+            form.guests !== '' &&
+            form.guests !== '0' &&
+            form.guests !== null &&
+            form.occasion !== '' &&
+            form.occasion !== null
+        )
+}

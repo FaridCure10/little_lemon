@@ -109,6 +109,10 @@
             color: white;
         }
 
+        .inputData.invalid{
+            border: 1px solid #f90000;
+        }
+
         button[type="submit"] {
             background: #cda45e;
             border: 0;
@@ -117,6 +121,16 @@
             transition: 0.4s;
             border-radius: 50px;
             cursor: pointer;
+        }
+
+        button:disabled {
+            background: #888888;
+            border: 0;
+            padding: 10px 35px;
+            color: #fff;
+            border-radius: 50px;
+            cursor:none;
+            pointer-events: none;
         }
 
 
